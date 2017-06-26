@@ -83,9 +83,13 @@ typedef NSMutableDictionary<NSString *, id> CallbacksDictionary;
 @synthesize executing = _executing;
 @synthesize finished = _finished;
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wobjc-designated-initializers"
 - (nonnull instancetype)init {
     return [self initWithRequest:nil inSession:nil options:0];
 }
+#pragma clang diagnostic pop
+
 
 - (nonnull instancetype)initWithRequest:(nullable NSURLRequest *)request
                               inSession:(nullable NSURLSession *)session
